@@ -1,23 +1,27 @@
-# Lista-de-tarefa-Python
-Adicionar tarefa, Listar tarefas, Remover tarefa
-# 📝 Lista de Tarefas (To-Do List)
+tarefas = []
 
-Projeto simples em Python para gerenciar tarefas pelo terminal.
+def adicionar():
+    tarefa = input("Digite a tarefa: ")
+    tarefas.append(tarefa)
 
-## 🚀 Funcionalidades
-- ➕ Adicionar tarefas
-- 📋 Listar tarefas
-- ❌ Remover tarefas
+def listar():
+    for i, t in enumerate(tarefas):
+        print(f"{i} - {t}")
 
-## 🧠 Tecnologias utilizadas
-- Python 3
+def remover():
+    listar()
+    i = int(input("Qual remover? "))
+    tarefas.pop(i)
 
-## ▶️ Como executar
+while True:
+    print("\n1-Adicionar 2-Listar 3-Remover 4-Sair")
+    op = input("Escolha: ")
 
-1. Certifique-se de ter o Python instalado:
-   python --version
-
-2. Execute o arquivo:
-   python nome_do_arquivo.py
-
-## 💻 Exemplo de uso
+    if op == "1":
+        adicionar()
+    elif op == "2":
+        listar()
+    elif op == "3":
+        remover()
+    else:
+        break
